@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Unlock Your Code</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+    }
+
+    .main-button, .download-button {
+      background-color: #ff9800;
+      color: white;
+      text-decoration: none;
+      padding: 15px 30px;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+
+    .main-button:hover, .download-button:hover {
+      background-color: #e68900;
+    }
+
+    .download-button {
+      display: none;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔓 Unlock Your Code</h1>
+  <p>Click the button below to unlock and access your download.</p>
+
+  <!-- Unlock Button -->
+  <button class="main-button" onclick="unlockCode()">🔓 Click to Unlock</button>
+
+  <!-- Hidden Download Link -->
+  <br>
+  <a id="downloadLink" class="download-button" href="https://drive.google.com/uc?export=download&id=1O3bztlJJPZYtL1AzK4xFnHgWEt-ciVRB" target="_blank">📦 Download Now</a>
+
+  <!-- ✅ PropellerAds Popunder Script -->
+  <script async data-cfasync="false" type="text/javascript"
+    src="https://propu.sh/pfe/current/tag.min.js?z=YOUR_ZONE_ID" data-zone="YOUR_ZONE_ID"></script>
+
+  <script>
+    function unlockCode() {
+      // Popunder script auto-triggers on click by design
+      // Now reveal the download button
+      setTimeout(() => {
+        document.getElementById('downloadLink').style.display = 'inline-block';
+      }, 500); // Wait a bit for ad to trigger first
+    }
+  </script>
+
+</body>
+</html>
