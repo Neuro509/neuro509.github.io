@@ -52,17 +52,15 @@
     }
   </style>
 
-  <!-- Load PropellerAds script on page load -->
+  <!-- Load PropellerAds popunder script immediately on page load -->
   <script async data-cfasync="false" src="https://propu.sh/pfe/current/tag.min.js?z=9459317" data-zone="9459317"></script>
 </head>
 <body>
   <h1>🔓 Unlock Your Code</h1>
   <p>Click the button below to unlock and access your download.</p>
 
-  <!-- Unlock Button -->
   <button class="main-button" onclick="unlockCode()">🔓 Click to Unlock</button>
 
-  <!-- Hidden Download Link -->
   <br />
   <a
     id="downloadLink"
@@ -75,10 +73,11 @@
   <script>
     function unlockCode() {
       const btn = document.querySelector('.main-button');
-      btn.disabled = true; // Prevent multiple clicks
+      btn.disabled = true;
+      console.log('Unlock clicked');
 
-      // Show download link immediately
-      document.getElementById('downloadLink').style.display = 'inline-block';
+      // Show download button
+      document.getElementById('downloadLink').style.display = 'block';
     }
   </script>
 </body>
