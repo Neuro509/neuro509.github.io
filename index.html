@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://al5sm.com/tag.min.js',9459317,document.body||document.documentElement)</script>
   <meta charset="UTF-8" />
   <title>Unlock Your Code</title>
   <style>
@@ -52,6 +51,9 @@
       cursor: not-allowed;
     }
   </style>
+
+  <!-- Load PropellerAds script on page load -->
+  <script async data-cfasync="false" src="https://propu.sh/pfe/current/tag.min.js?z=9459317" data-zone="9459317"></script>
 </head>
 <body>
   <h1>🔓 Unlock Your Code</h1>
@@ -72,21 +74,11 @@
 
   <script>
     function unlockCode() {
-      // Disable button to prevent multiple clicks
       const btn = document.querySelector('.main-button');
-      btn.disabled = true;
+      btn.disabled = true; // Prevent multiple clicks
 
-      // Load PropellerAds script dynamically
-      let script = document.createElement('script');
-      script.setAttribute('data-cfasync', 'false');
-      script.src = 'https://propu.sh/pfe/current/tag.min.js?z=9459317';
-      script.setAttribute('data-zone', '9459317');
-      document.body.appendChild(script);
-
-      // Show download link after 500ms delay
-      setTimeout(() => {
-        document.getElementById('downloadLink').style.display = 'inline-block';
-      }, 500);
+      // Show download link immediately
+      document.getElementById('downloadLink').style.display = 'inline-block';
     }
   </script>
 </body>
