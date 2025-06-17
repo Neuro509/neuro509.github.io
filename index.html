@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <script>(function(s,u,z,p){s.src=u,s.setAttribute('data-zone',z),p.appendChild(s);})(document.createElement('script'),'https://al5sm.com/tag.min.js',9459317,document.body||document.documentElement)</script>
+  <meta charset="UTF-8" />
   <title>Unlock Your Code</title>
   <style>
     body {
@@ -22,7 +23,8 @@
       margin-bottom: 40px;
     }
 
-    .main-button, .download-button {
+    .main-button,
+    .download-button {
       background-color: #ff9800;
       color: white;
       text-decoration: none;
@@ -30,11 +32,13 @@
       font-size: 1.1rem;
       border-radius: 10px;
       transition: background-color 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       cursor: pointer;
+      border: none;
     }
 
-    .main-button:hover, .download-button:hover {
+    .main-button:hover,
+    .download-button:hover {
       background-color: #e68900;
     }
 
@@ -42,10 +46,14 @@
       display: none;
       margin-top: 30px;
     }
+
+    .main-button:disabled {
+      background-color: #999;
+      cursor: not-allowed;
+    }
   </style>
 </head>
 <body>
-
   <h1>🔓 Unlock Your Code</h1>
   <p>Click the button below to unlock and access your download.</p>
 
@@ -53,22 +61,33 @@
   <button class="main-button" onclick="unlockCode()">🔓 Click to Unlock</button>
 
   <!-- Hidden Download Link -->
-  <br>
-  <a id="downloadLink" class="download-button" href="https://drive.google.com/uc?export=download&id=1O3bztlJJPZYtL1AzK4xFnHgWEt-ciVRB" target="_blank">📦 Download Now</a>
-
-  <!-- ✅ PropellerAds Popunder Script -->
-  <script async data-cfasync="false" type="text/javascript"
-    src="https://propu.sh/pfe/current/tag.min.js?z=YOUR_ZONE_ID" data-zone="YOUR_ZONE_ID"></script>
+  <br />
+  <a
+    id="downloadLink"
+    class="download-button"
+    href="https://drive.google.com/uc?export=download&id=1O3bztlJJPZYtL1AzK4xFnHgWEt-ciVRB"
+    target="_blank"
+    >📦 Download Now</a
+  >
 
   <script>
     function unlockCode() {
-      // Popunder script auto-triggers on click by design
-      // Now reveal the download button
+      // Disable button to prevent multiple clicks
+      const btn = document.querySelector('.main-button');
+      btn.disabled = true;
+
+      // Load PropellerAds script dynamically
+      let script = document.createElement('script');
+      script.setAttribute('data-cfasync', 'false');
+      script.src = 'https://propu.sh/pfe/current/tag.min.js?z=9459317';
+      script.setAttribute('data-zone', '9459317');
+      document.body.appendChild(script);
+
+      // Show download link after 500ms delay
       setTimeout(() => {
         document.getElementById('downloadLink').style.display = 'inline-block';
-      }, 500); // Wait a bit for ad to trigger first
+      }, 500);
     }
   </script>
-
 </body>
 </html>
